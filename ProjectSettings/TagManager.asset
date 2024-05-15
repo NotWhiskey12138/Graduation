@@ -50,3 +50,12 @@ TagManager:
   - name: Front
     uniqueID: 2703675125
     locked: 0
+  - name: Enemy
+    uniqueID: 1127975371
+    locked: 0
+  - name: Player
+    uniqueID: 441306181
+    locked: 0
+  - name: Foreground Decoration
+    uniqueID: 2304668887
+    locked: 0

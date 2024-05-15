@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class PlayerInAirState : PlayerState
 {
+    //Input
     private int xInput;
+    private bool jumpInput;
+    private bool jumpInputStop;
+    private bool grabInput;
+    
+    //Checks
     private bool isGrounded;
     private bool isTouchingWall;
     private bool isTouchingWallBack;
     private bool oldIsTouchingWall;
     private bool oldIsTouchingWallBack;
-    private bool jumpInput;
-    private bool jumpInputStop;
+    private bool isTouchingLedge;
+    
     private bool coyoteTime;
     private bool wallJumpCoyoteTime;
     private bool isJumping;
-    private bool grabInput;
-    private bool isTouchingLedge;
 
     private float startWallJumpCoyoteTime;
     

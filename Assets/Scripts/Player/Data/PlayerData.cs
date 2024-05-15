@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "newPlayerData",menuName = "Data/Player Data/Base Data")]
 public class PlayerData : ScriptableObject
@@ -30,10 +31,14 @@ public class PlayerData : ScriptableObject
     [Header("Ledge Climb State")] 
     public Vector2 startOffset;
     public Vector2 stopOffset;
-    
+
+    [Header("Crouch State")] 
+    public float crouchMovementVelocity = 5f;
+    public float crouchColliderHeight = 0.8f;
+    public float standColliderHeight = 1.6f;
     
     [Header("Check Variables")] 
     public float grandCheckRadius = 0.3f;
     public float wallCheckDistance = 0.5f;
-    public LayerMask whatIfGround;
+    public LayerMask whatIsGround;
 }
