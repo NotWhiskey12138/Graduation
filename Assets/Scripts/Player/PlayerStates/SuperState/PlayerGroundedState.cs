@@ -38,7 +38,6 @@ public class PlayerGroundedState : PlayerState
 
         if (jumpInput && player.JumpState.CanJump())
         {
-            player.InputHandler.UseJumpInput();
             stateMachine.ChangeState(player.JumpState);
         }
         else if (!isGrounded)
@@ -62,6 +61,6 @@ public class PlayerGroundedState : PlayerState
         base.DoChecks();
 
         isGrounded = player.CheckIfGrounded();
-        isTouchingWall = player.CheckIfTouchgingWall();
+        isTouchingWall = player.CheckIfTouchingWall();
     }
 }

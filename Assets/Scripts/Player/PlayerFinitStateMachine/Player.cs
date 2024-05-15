@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState WallSlideState { get; private set; }
     public PlayerWallGrabState WallGrabState { get; private set; }
     public PlayerWallClimbState WallClimbState { get; private set; }
+    public PlayerWallJumpState WallJumpState { get;private set; }
     
     [SerializeField] 
     private PlayerData playerData;
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
+        WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
     }
 
     private void Start()
@@ -86,6 +88,15 @@ public class Player : MonoBehaviour
     #endregion
 
     #region SetFunctions
+
+    public void SetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        angle.Normalize();
+        workspace.Set(angle.x * velocity * direction, angle.y * velocity);
+        RB.velocity = workspace;
+        CurrentVelocity = workspace;
+    }
+    
     public void SetVelocityX(float velocity)
     {
         workspace.Set(velocity, CurrentVelocity.y);
@@ -109,9 +120,15 @@ public class Player : MonoBehaviour
         return Physics2D.OverlapCircle(grandCheck.position, playerData.grandCheckRadius, playerData.whatIfGround);
     }
 
-    public bool CheckIfTouchgingWall()
+    public bool CheckIfTouchingWall()
     {
         return Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance,
+            playerData.whatIfGround);
+    }
+    
+    public bool CheckIfTouchingWallBack()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * -FacingDirection, playerData.wallCheckDistance,
             playerData.whatIfGround);
     }
     
