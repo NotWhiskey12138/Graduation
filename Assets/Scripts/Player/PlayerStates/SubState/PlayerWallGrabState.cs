@@ -58,8 +58,8 @@ public class PlayerWallGrabState : PlayerTouchingWallState
     {
         player.transform.position = holdPosition;
         
-        core.Movement.SetVelocityX(0f);
-        //player.SetVelocityY(0f);
+        Movement?.SetVelocityX(0f);
+        Movement?.SetVelocityY(0f);
     }
     
     public override void AnimationTrigger()
