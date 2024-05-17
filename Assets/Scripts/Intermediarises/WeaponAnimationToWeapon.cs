@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,24 +20,25 @@ public class WeaponAnimationToWeapon : MonoBehaviour
     {
         weapon.AnimationStartMovementTrigger();
     }
-    
+
     private void AnimationStopMovementTrigger()
     {
         weapon.AnimationStopMovementTrigger();
     }
 
-    private void AnimationTurnOffTrigger()
+    private void AnimationTurnOffFlipTrigger()
     {
         weapon.AnimationTurnOffFlipTrigger();
     }
 
-    private void AnimationTurnOnTrigger()
+    private void AnimationTurnOnFlipTrigger()
     {
-        weapon.AnimationTurnOnFlipTrigger();
+        weapon.AnimationTurnOnFlipTigger();
     }
 
     private void AnimationActionTrigger()
     {
         weapon.AnimationActionTrigger();
     }
+
 }

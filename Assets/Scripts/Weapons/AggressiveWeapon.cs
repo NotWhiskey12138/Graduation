@@ -6,14 +6,15 @@ using System.Linq;
 public class AggressiveWeapon : Weapon
 {
     protected SO_AggressiveWeaponData aggressiveWeaponData;
-    
-    private List<IDamageable> detectedDamageable = new List<IDamageable>();
+
+    private List<IDamageable> detectedDamageables = new List<IDamageable>();
+    private List<IKnockbackable> detectedKnockbackables = new List<IKnockbackable>();
 
     protected override void Awake()
     {
         base.Awake();
 
-        if (weaponData.GetType() == typeof(SO_AggressiveWeaponData))
+        if(weaponData.GetType() == typeof(SO_AggressiveWeaponData))
         {
             aggressiveWeaponData = (SO_AggressiveWeaponData)weaponData;
         }
@@ -26,43 +27,58 @@ public class AggressiveWeapon : Weapon
     public override void AnimationActionTrigger()
     {
         base.AnimationActionTrigger();
-        
+
         CheckMeleeAttack();
     }
 
     private void CheckMeleeAttack()
     {
         WeaponAttackDetails details = aggressiveWeaponData.AttackDetails[attackCounter];
-        
-        foreach (IDamageable item in detectedDamageable.ToList())
+
+        foreach (IDamageable item in detectedDamageables.ToList())
         {
             item.Damage(details.damageAmount);
         }
+
+        foreach (IKnockbackable item in detectedKnockbackables.ToList())
+        {
+            item.Knockback(details.knockbackAngle, details.knockbackStrength, core.Movement.FacingDirection);
+        }
     }
-    
+
     public void AddToDetected(Collider2D collision)
     {
-        //Debug.Log("AddToDetected");
-        
+
         IDamageable damageable = collision.GetComponent<IDamageable>();
 
-        if (damageable != null)
+        if(damageable != null)
         {
-            //Debug.Log("Added!");
-            detectedDamageable.Add(damageable);
+            detectedDamageables.Add(damageable);
+        }
+
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+
+        if(knockbackable != null)
+        {
+            detectedKnockbackables.Add(knockbackable);
         }
     }
 
     public void RemoveFromDetected(Collider2D collision)
     {
-        //Debug.Log("RemoveFromDetected");
-        
         IDamageable damageable = collision.GetComponent<IDamageable>();
 
         if (damageable != null)
         {
-            //Debug.Log("Removed!");
-            detectedDamageable.Remove(damageable);
+            detectedDamageables.Remove(damageable);
+        }
+
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+
+        if (knockbackable != null)
+        {
+            detectedKnockbackables.Remove(knockbackable);
         }
     }
+   
 }

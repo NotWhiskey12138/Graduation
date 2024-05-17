@@ -7,12 +7,12 @@ public class PlayerAttackState : PlayerAbilityState
     private Weapon weapon;
 
     private int xInput;
-    
+
     private float velocityToSet;
-    
+
     private bool setVelocity;
     private bool shouldCheckFlip;
-    
+
     public PlayerAttackState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -22,14 +22,14 @@ public class PlayerAttackState : PlayerAbilityState
         base.Enter();
 
         setVelocity = false;
-        
+
         weapon.EnterWeapon();
     }
 
     public override void Exit()
     {
         base.Exit();
-        
+
         weapon.ExitWeapon();
     }
 
@@ -41,19 +41,20 @@ public class PlayerAttackState : PlayerAbilityState
 
         if (shouldCheckFlip)
         {
-            core.Movement.CheckIfShouldFlip(xInput);   
+            core.Movement.CheckIfShouldFlip(xInput);
         }
+
 
         if (setVelocity)
         {
             core.Movement.SetVelocityX(velocityToSet * core.Movement.FacingDirection);
         }
     }
-    
+
     public void SetWeapon(Weapon weapon)
     {
         this.weapon = weapon;
-        weapon.InitializeWeapon(this);
+        this.weapon.InitializeWeapon(this, core);
     }
 
     public void SetPlayerVelocity(float velocity)
@@ -68,16 +69,15 @@ public class PlayerAttackState : PlayerAbilityState
     {
         shouldCheckFlip = value;
     }
-    
+
     #region Animation Triggers
 
     public override void AnimationFinishTrigger()
     {
-        base.AnimationFinishTrigger();
+        base.AnimationFinishTrigger();                
 
         isAbilityDone = true;
     }
-    
 
     #endregion
 }
