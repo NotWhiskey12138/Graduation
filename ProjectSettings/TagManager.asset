@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - ParticleContainer
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -44,20 +44,20 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Back
-    uniqueID: 4025214657
+    uniqueID: 3633931763
     locked: 0
   - name: Middle
-    uniqueID: 2284921053
+    uniqueID: 646815525
     locked: 0
   - name: Front
-    uniqueID: 2703675125
+    uniqueID: 578334245
     locked: 0
   - name: Enemy
-    uniqueID: 1127975371
+    uniqueID: 2281615069
     locked: 0
   - name: Player
-    uniqueID: 441306181
+    uniqueID: 917353899
     locked: 0
   - name: Foreground Decoration
-    uniqueID: 2304668887
+    uniqueID: 3229488133
     locked: 0
