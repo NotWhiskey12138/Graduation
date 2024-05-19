@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &956375492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956375493}
+  - component: {fileID: 956375494}
+  m_Layer: 11
+  m_Name: Death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956375493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956375492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.0570555, y: 13.879623, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2188474785146859764}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &956375494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956375492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5a1d5ee5550ac438052e1345b5524d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticles:
+  - {fileID: 5096148057906189823, guid: 4a122dcc68153794295f6953dd91521e, type: 3}
+  - {fileID: 1962614393226834858, guid: 3d13ef1f52d189642930444f906fc622, type: 3}
 --- !u!1 &2188474783724396296
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,8 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6267ff3aabc6421da03b40648cd4501e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageParticles: {fileID: 6240072112886026631, guid: d3ad3f1375e0d114ca19695641fceb61,
-    type: 3}
+  damageParticles: {fileID: 6240072112886026631, guid: d3ad3f1375e0d114ca19695641fceb61, type: 3}
   maxKnockbackTime: 0.2
 --- !u!1 &2188474783849980469
 GameObject:
@@ -246,11 +292,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -679396035
-  m_SortingLayer: 0
+  m_SortingLayerID: -2013352227
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -450497991343149109, guid: 0ad1f08efda3e7b499d143cc4a1a6f2e,
-    type: 3}
+  m_Sprite: {fileID: -450497991343149109, guid: 0ad1f08efda3e7b499d143cc4a1a6f2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -361,10 +406,8 @@ MonoBehaviour:
   moveStateData: {fileID: 11400000, guid: d71407fa20cb3eb42ae5412ed3504c41, type: 2}
   playerDetectedData: {fileID: 11400000, guid: ba0ca8ecf99120845b274a5ff27a54a8, type: 2}
   chargeStateData: {fileID: 11400000, guid: b2e94cd5fe991b747abe55cdcca02007, type: 2}
-  lookForPlayerStateData: {fileID: 11400000, guid: 0d7c0c4f6597ee5479e6ab0e4867c19f,
-    type: 2}
-  meleeAttackStateData: {fileID: 11400000, guid: 00b79137cf445fd46b27699c923056de,
-    type: 2}
+  lookForPlayerStateData: {fileID: 11400000, guid: 0d7c0c4f6597ee5479e6ab0e4867c19f, type: 2}
+  meleeAttackStateData: {fileID: 11400000, guid: 00b79137cf445fd46b27699c923056de, type: 2}
   stunStateData: {fileID: 11400000, guid: feb476734f45df242b04c3b50b211dc5, type: 2}
   deadStateData: {fileID: 11400000, guid: 803c5f6895b75114087f77743674c1bc, type: 2}
   meleeAttackPosition: {fileID: 2188474785239372934}
@@ -508,6 +551,7 @@ Transform:
   - {fileID: 2188474783800776712}
   - {fileID: 8708647542113449650}
   - {fileID: 7122570982340459569}
+  - {fileID: 956375493}
   m_Father: {fileID: 2188474784307885855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

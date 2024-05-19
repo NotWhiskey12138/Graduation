@@ -34,8 +34,8 @@ public class Core : MonoBehaviour
 
         if (comp)
             return comp;
-       
-        comp = GetCoreComponent<T>();
+
+        comp = GetComponentInChildren<T>();
         
         if (comp)
             return comp;
@@ -43,6 +43,8 @@ public class Core : MonoBehaviour
         Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
 
         return null;
+        
+
     }
 
     public T GetCoreComponent<T>(ref T value) where T : CoreComponent
