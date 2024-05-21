@@ -64,6 +64,8 @@ public class PlayerInputHandler : MonoBehaviour
         NormInputX = Mathf.RoundToInt(RawMovementInput.x);
         NormInputY = Mathf.RoundToInt(RawMovementInput.y);
         
+        Debug.Log(NormInputX);
+        
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
