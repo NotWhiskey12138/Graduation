@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
     #region Other Variables
     
     private Vector2 workspace;
+
+    private bool interactiveInput;
     
     #endregion
 
@@ -84,6 +86,8 @@ public class Player : MonoBehaviour
     {
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
+
+        interactiveInput = InputHandler.InteractiveInput;
     }
 
     private void FixedUpdate()
@@ -110,8 +114,17 @@ public class Player : MonoBehaviour
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
-    
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Item") && interactiveInput) 
+        {
+            var itemA = other.GetComponent<Item>();
+            itemA.UseItem();
+            interactiveInput = false;
+            Debug.Log("jjjjj");
+        }
+    }
 
     #endregion
     

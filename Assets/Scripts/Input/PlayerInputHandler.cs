@@ -12,6 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
     public bool GrabInput { get; private set; }
+    public bool InteractiveInput { get; private set; }
     
     public bool[] AttackInputs { get; private set; }
 
@@ -64,7 +65,7 @@ public class PlayerInputHandler : MonoBehaviour
         NormInputX = Mathf.RoundToInt(RawMovementInput.x);
         NormInputY = Mathf.RoundToInt(RawMovementInput.y);
         
-        Debug.Log(NormInputX);
+        //Debug.Log(NormInputX);
         
     }
 
@@ -93,6 +94,19 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             GrabInput = false;
+        }
+    }
+
+    public void OnInteractiveInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            InteractiveInput = true;
+        }
+
+        if (context.canceled)
+        {
+            InteractiveInput = false;
         }
     }
     
