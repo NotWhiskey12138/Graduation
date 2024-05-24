@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
     public PlayerInventory Inventory { get; private set; }
+
+    private Stats playerStats;
     
     #endregion
     
@@ -42,13 +44,14 @@ public class Player : MonoBehaviour
     private Vector2 workspace;
 
     private bool interactiveInput;
-    
+
     #endregion
 
     #region Unity Callback Functions
     private void Awake()
     {
         Core = GetComponentInChildren<Core>();
+        
         
         StateMachine = new PlayerStateMachine();
 
@@ -75,6 +78,8 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();
         Inventory = GetComponent<PlayerInventory>();
+        
+        
 
         PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.secondary]);
@@ -86,7 +91,7 @@ public class Player : MonoBehaviour
     {
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
-
+        
         interactiveInput = InputHandler.InteractiveInput;
     }
 
@@ -125,7 +130,7 @@ public class Player : MonoBehaviour
             Debug.Log("jjjjj");
         }
     }
-
+    
     #endregion
     
 }
