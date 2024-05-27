@@ -6,8 +6,8 @@ TagManager:
   tags:
   - ParticleContainer
   - Enemy
-  - Item
   - Bounds
+  - Interactable
   layers:
   - Default
   - TransparentFX

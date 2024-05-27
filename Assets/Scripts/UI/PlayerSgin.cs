@@ -23,9 +23,18 @@ public class PlayerSgin : MonoBehaviour
     private void Update()
     {
         signSprite.GetComponent<SpriteRenderer>().enabled = canPress;
-        signSprite.transform.localScale = playerTrans.localScale;
+        signSprite.transform.localRotation = playerTrans.localRotation;
+        
+    }
 
-        OnActionChange(obj, InputActionChange.ActionStarted);
+    private void OnEnable()
+    {
+        InputSystem.onActionChange += OnActionChange;
+    }
+
+    private void OnDisable()
+    {
+        InputSystem.onActionChange -= OnActionChange;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -45,7 +54,7 @@ public class PlayerSgin : MonoBehaviour
     {
         if (actionChange == InputActionChange.ActionStarted)
         {
-            //Debug.Log(((InputAction)obj).activeControl.device);
+            Debug.Log(((InputAction)obj).activeControl.device);
 
             var d = ((InputAction)obj).activeControl.device;
 
