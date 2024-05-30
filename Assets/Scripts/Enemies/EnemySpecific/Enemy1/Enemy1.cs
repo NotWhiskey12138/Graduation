@@ -46,13 +46,24 @@ public class Enemy1 : Entity
         meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
         stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
         deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
-
-       
+        
     }
 
     private void Start()
     {
         stateMachine.Initialize(moveState);        
+    }
+    
+    private void OnEnable()
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveData();
+    }
+
+    private void OnDisable()
+    {
+        ISaveable saveable = this;
+        saveable.UnRegisterSaveData();
     }
 
     public override void OnDrawGizmos()

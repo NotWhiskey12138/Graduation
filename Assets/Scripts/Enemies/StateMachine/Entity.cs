@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+public class Entity : MonoBehaviour,ISaveable
 {
     protected Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
     private Movement movement;
@@ -104,4 +104,42 @@ public class Entity : MonoBehaviour
             Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
        }
     }
+
+    #region SaveFunction
+
+    public DataDefinition GetDataID()
+    {
+        return GetComponent<DataDefinition>();
+    }
+
+    public void GetSaveData(Data data)
+    {
+        DataDefinition dataDefinition = GetDataID();
+        if (dataDefinition != null)
+        {
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                data.characterPosDict[GetDataID().ID] = transform.position;
+            }
+            else
+            {
+                data.characterPosDict.Add(GetDataID().ID, transform.position);
+            }
+        }
+    }
+
+    public void LoadData(Data data)
+    {
+        DataDefinition dataDefinition = GetDataID();
+        if (dataDefinition != null)
+        {
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                transform.position = data.characterPosDict[GetDataID().ID];
+            }
+        }
+    }
+
+    #endregion
+
 }

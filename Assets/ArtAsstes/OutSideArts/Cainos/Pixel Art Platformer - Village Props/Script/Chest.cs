@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cainos.LucidEditor;
 
-public class Chest : Item
+public class Chest : MonoBehaviour,IInteractable
 {
     [FoldoutGroup("Reference")]
     public Animator animator;
@@ -32,11 +32,11 @@ public class Chest : Item
         IsOpened = false;
     }
 
-    public override void UseItem()
+    public void UseItem()
     {
         if (isOpened == false) 
         {
-            Close();
+            Open();
         }
         else
         {

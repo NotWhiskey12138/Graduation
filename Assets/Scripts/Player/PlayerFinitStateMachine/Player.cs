@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,ISaveable
 {
     #region State Variables
     public PlayerStateMachine StateMachine { get; private set; }
@@ -43,7 +43,9 @@ public class Player : MonoBehaviour
     
     private Vector2 workspace;
 
-    private bool interactiveInput;
+    private bool interactiveInput; //使用输入检测
+
+    private IInteractable targetItem; //当前获取的可交互物体
 
     #endregion
 
@@ -78,13 +80,23 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();
         Inventory = GetComponent<PlayerInventory>();
-        
-        
 
         PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.secondary]);
         StateMachine.Initialize(IdleState);
         
+    }
+
+    private void OnEnable()
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveData();
+    }
+
+    private void OnDisable()
+    {
+        ISaveable saveable = this;
+        saveable.UnRegisterSaveData();
     }
 
     private void Update()
@@ -122,15 +134,43 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Item") && interactiveInput) 
+        if (other.CompareTag("Interactable") && interactiveInput) 
         {
-            var itemA = other.GetComponent<Item>();
-            itemA.UseItem();
+            targetItem = other.GetComponent<IInteractable>();
+            targetItem.UseItem();
             interactiveInput = false;
-            Debug.Log("jjjjj");
         }
     }
     
     #endregion
-    
+
+    #region SaveFunction
+
+    public DataDefinition GetDataID()
+    {
+        return GetComponent<DataDefinition>();
+    }
+
+    public void GetSaveData(Data data)
+    {
+        if (data.characterPosDict.ContainsKey(GetDataID().ID))
+        {
+            data.characterPosDict[GetDataID().ID] = transform.position;
+        }
+        else
+        {
+            data.characterPosDict.Add(GetDataID().ID, transform.position);
+        }
+    }
+
+    public void LoadData(Data data)
+    {
+        if (data.characterPosDict.ContainsKey(GetDataID().ID))
+        {
+            transform.position = data.characterPosDict[GetDataID().ID];
+        }
+    }
+
+    #endregion
+   
 }

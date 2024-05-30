@@ -22,6 +22,7 @@ public class PlayerSgin : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(canPress);
         signSprite.GetComponent<SpriteRenderer>().enabled = canPress;
         signSprite.transform.localRotation = playerTrans.localRotation;
         

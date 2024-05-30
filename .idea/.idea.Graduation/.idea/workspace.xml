@@ -6,13 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="379cae35-698c-4fe5-9332-feb15058721e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/RuleTiles/Dungeon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/RuleTiles/Dungeon.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cameras.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cameras.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Monster - Dungeon/Animation/AC Zombie.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Monster - Dungeon/Animation/AC Zombie.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Prefab/PF Village Props - Stone of Recall.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Prefab/PF Village Props - Stone of Recall.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Script/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Script/Chest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Colourful Hierarchy Category GameObject/Color Palette.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Colourful Hierarchy Category GameObject/Color Palette.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemySpecific/Enemy1/Enemy1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemySpecific/Enemy1/Enemy1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/StateMachine/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/StateMachine/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/States/Data/D_Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/States/Data/D_Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item/Item.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item/Item.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerSgin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerSgin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -25,7 +31,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ISaveable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save Load/DataDefinition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save Load/DataManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerSgin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -109,6 +119,7 @@
       <workItem from="1716651923643" duration="612000" />
       <workItem from="1716709607996" duration="12000" />
       <workItem from="1716816327612" duration="3616000" />
+      <workItem from="1717038962258" duration="7082000" />
     </task>
     <servers />
   </component>

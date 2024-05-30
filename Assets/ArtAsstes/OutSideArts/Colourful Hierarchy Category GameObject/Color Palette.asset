@@ -43,3 +43,8 @@ MonoBehaviour:
     backgroundColor: {r: 1, g: 0.5896226, b: 0.88713384, a: 1}
     textAlignment: 4
     fontStyle: 0
+  - keyChar: '%'
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    backgroundColor: {r: 1, g: 0, b: 0.72380924, a: 1}
+    textAlignment: 4
+    fontStyle: 0
