@@ -5,7 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="379cae35-698c-4fe5-9332-feb15058721e" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/ObjectPoolSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Utilities/Whiskey/TimeNotifier.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/CollisionSenses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/CollisionSenses.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Combat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Combat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/CoreComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/CoreComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Death.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Death.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/ParticleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/ParticleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/Stats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy1/E1_PlayerDetectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy1/E1_PlayerDetectedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy1/Enemy1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy1/Enemy1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy_Soldier/E_Soldier_PlayerDetectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy_Soldier/E_Soldier_PlayerDetectedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy_Soldier/Enemy_Soldier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemySpecific/Enemy_Soldier/Enemy_Soldier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/StateMachine/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/StateMachine/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/StateMachine/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/StateMachine/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/ChargeState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/ChargeState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/DodgeState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/DodgeState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/LookForPlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/LookForPlayerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/MeleeAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/MeleeAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/MoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/MoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/PlayerDetectedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/PlayerDetectedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/RangedAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/RangedAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/StunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/StunState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Generics.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/Generics.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Generics/GenericNotImplementedError.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/Generics/GenericNotImplementedError.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Generics/GenericNotImplementedError.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/Generics/GenericNotImplementedError.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Input/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Input/PlayerInputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerFinitStateMachine/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerFinitStateMachine/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Projectiles/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Utilities/Timer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Utilities/Timer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Utilities/Whiskey/TimeNotifier.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Weapons/Weapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +50,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Core/Stats/Stat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ProjectileSystem/Components/Damage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ProjectileSystem/DirectTowardsTarget.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Utilities/Whiskey/AngleUtilities.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

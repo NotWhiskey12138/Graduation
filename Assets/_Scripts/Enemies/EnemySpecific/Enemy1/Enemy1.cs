@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,24 +47,30 @@ public class Enemy1 : Entity
         meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
         stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
         deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
+
+        stats.Poise.OnCurrentValueZero += HandlePoiseZero;
+    }
+
+    private void HandlePoiseZero()
+    {
+        stateMachine.ChangeState(stunState);
+    }
+
+    protected override void HandleParry()
+    {
+        base.HandleParry();
         
+        stateMachine.ChangeState(stunState);
     }
 
     private void Start()
     {
         stateMachine.Initialize(moveState);        
     }
-    
-    private void OnEnable()
-    {
-        ISaveable saveable = this;
-        saveable.RegisterSaveData();
-    }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        ISaveable saveable = this;
-        saveable.UnRegisterSaveData();
+        stats.Poise.OnCurrentValueZero -= HandlePoiseZero;
     }
 
     public override void OnDrawGizmos()

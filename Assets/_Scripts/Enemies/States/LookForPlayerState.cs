@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Whiskey.CoreSystem;
 using UnityEngine;
 
-public class LookForPlayerState : State
-{
-    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+public class LookForPlayerState : State {
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+
     private Movement movement;
-    
+    private CollisionSenses collisionSenses;
+
     protected D_LookForPlayer stateData;
 
     protected bool turnImmediately;
@@ -18,20 +21,17 @@ public class LookForPlayerState : State
 
     protected int amountOfTurnsDone;
 
-    public LookForPlayerState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_LookForPlayer stateData) : base(etity, stateMachine, animBoolName)
-    {
+    public LookForPlayerState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_LookForPlayer stateData) : base(etity, stateMachine, animBoolName) {
         this.stateData = stateData;
     }
 
-    public override void DoChecks()
-    {
+    public override void DoChecks() {
         base.DoChecks();
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 
-    public override void Enter()
-    {
+    public override void Enter() {
         base.Enter();
 
         isAllTurnsDone = false;
@@ -43,49 +43,40 @@ public class LookForPlayerState : State
         Movement?.SetVelocityX(0f);
     }
 
-    public override void Exit()
-    {
+    public override void Exit() {
         base.Exit();
     }
 
-    public override void LogicUpdate()
-    {
+    public override void LogicUpdate() {
         base.LogicUpdate();
 
         Movement?.SetVelocityX(0f);
 
-        if (turnImmediately)
-        {
+        if (turnImmediately) {
             Movement?.Flip();
             lastTurnTime = Time.time;
             amountOfTurnsDone++;
             turnImmediately = false;
-        }
-        else if(Time.time >= lastTurnTime + stateData.timeBetweenTurns && !isAllTurnsDone)
-        {
+        } else if (Time.time >= lastTurnTime + stateData.timeBetweenTurns && !isAllTurnsDone) {
             Movement?.Flip();
             lastTurnTime = Time.time;
             amountOfTurnsDone++;
         }
 
-        if(amountOfTurnsDone >= stateData.amountOfTurns)
-        {
+        if (amountOfTurnsDone >= stateData.amountOfTurns) {
             isAllTurnsDone = true;
         }
 
-        if(Time.time >= lastTurnTime + stateData.timeBetweenTurns && isAllTurnsDone)
-        {
+        if (Time.time >= lastTurnTime + stateData.timeBetweenTurns && isAllTurnsDone) {
             isAllTurnsTimeDone = true;
         }
     }
 
-    public override void PhysicsUpdate()
-    {
+    public override void PhysicsUpdate() {
         base.PhysicsUpdate();
     }
 
-    public void SetTurnImmediately(bool flip)
-    {
+    public void SetTurnImmediately(bool flip) {
         turnImmediately = flip;
     }
 }

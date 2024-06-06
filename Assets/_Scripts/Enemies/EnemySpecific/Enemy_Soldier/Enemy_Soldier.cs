@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Soldier : Entity
 {
-    public E_Soldier_IdleState idleState { get; private set; }
+   public E_Soldier_IdleState idleState { get; private set; }
     public E_Soldier_MoveState moveState { get; private set; }
     public E_Soldier_PlayerDetectedState playerDetectedState { get; private set; }
     public E_Soldier_ChargeState chargeState { get; private set; }
@@ -47,12 +47,29 @@ public class Enemy_Soldier : Entity
         stunState = new E_Soldier_StunState(this, stateMachine, "stun", stunStateData, this);
         deadState = new E_Soldier_DeadState(this, stateMachine, "dead", deadStateData, this);
 
-       
+        stats.Poise.OnCurrentValueZero += HandlePoiseZero;
+    }
+
+    private void HandlePoiseZero()
+    {
+        stateMachine.ChangeState(stunState);
+    }
+
+    protected override void HandleParry()
+    {
+        base.HandleParry();
+        
+        stateMachine.ChangeState(stunState);
     }
 
     private void Start()
     {
         stateMachine.Initialize(moveState);        
+    }
+
+    private void OnDestroy()
+    {
+        stats.Poise.OnCurrentValueZero -= HandlePoiseZero;
     }
 
     public override void OnDrawGizmos()

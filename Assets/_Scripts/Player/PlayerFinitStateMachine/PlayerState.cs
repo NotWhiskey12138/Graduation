@@ -1,5 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using Whiskey.CoreSystem;
+using TMPro;
 using UnityEngine;
-
 public class PlayerState
 {
     protected Core core;

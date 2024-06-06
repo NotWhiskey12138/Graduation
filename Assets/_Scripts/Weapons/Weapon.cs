@@ -1,4 +1,5 @@
 using System;
+using Whiskey.CoreSystem;
 using UnityEngine;
 using Whiskey.Utilities;
 
@@ -6,74 +7,158 @@ namespace Whiskey.Weapons
 {
     public class Weapon : MonoBehaviour
     {
-        [SerializeField] private int numberOfAttacks; //该武器攻击次数
-        [SerializeField] private float attackCounterResetCooldown; //攻击冷却重置时间
+        public event Action<bool> OnCurrentInputChange;
+
+        public event Action OnEnter;
+        public event Action OnExit;
+        public event Action OnUseInput;
+
+        [SerializeField] private float attackCounterResetCooldown;
+
+        public bool CanEnterAttack { get; private set; }
+        
+        public WeaponDataSO Data { get; private set; }
 
         public int CurrentAttackCounter
         {
             get => currentAttackCounter;
-            private set => currentAttackCounter = value >= numberOfAttacks ? 0 : value; 
+            private set => currentAttackCounter = value >= Data.NumberOfAttacks ? 0 : value;
         }
-        
-        public event Action OnExit; //该武器退出时函数
-        
-        private Animator anim;
-        private GameObject baseGameObject;
 
-        private AnimationEventHandler eventHandler;
+        public bool CurrentInput
+        {
+            get => currentInput;
+            set
+            {
+                if (currentInput != value)
+                {
+                    currentInput = value;
+                    OnCurrentInputChange?.Invoke(currentInput);
+                }
+            }
+        }
+
+        public float AttackStartTime { get; private set; }
+
+        public Animator Anim { get; private set; }
+        public GameObject BaseGameObject { get; private set; }
+        public GameObject WeaponSpriteGameObject { get; private set; }
+
+        public AnimationEventHandler EventHandler
+        {
+            get
+            {
+                if (!initDone)
+                {
+                    GetDependencies();
+                }
+
+                return eventHandler;
+            }
+            private set => eventHandler = value;
+        }
+
+        public Core Core { get; private set; }
 
         private int currentAttackCounter;
 
-        private Timer attackCounterResetTimer; //攻击重置时间计算器
-        
+        private TimeNotifier attackCounterResetTimeNotifier;
+
+        private bool currentInput;
+
+        private bool initDone;
+        private AnimationEventHandler eventHandler;
+
         public void Enter()
         {
+            // Debug.Break();
             print($"{transform.name} enter");
-            
-            attackCounterResetTimer.StopTimer();
 
-            anim.SetBool("active", true);
-            anim.SetInteger("counter", currentAttackCounter);
+            AttackStartTime = Time.time;
+
+            attackCounterResetTimeNotifier.Disable();
+
+            Anim.SetBool("active", true);
+            Anim.SetInteger("counter", currentAttackCounter);
+
+            OnEnter?.Invoke();
         }
 
-        private void Exit()
+        public void SetCore(Core core)
         {
-            anim.SetBool("active", false);
+            Core = core;
+        }
+
+        public void SetData(WeaponDataSO data)
+        {
+            Data = data;
+            
+            if(Data is null)
+                return;
+            
+            ResetAttackCounter();
+        }
+
+        public void SetCanEnterAttack(bool value) => CanEnterAttack = value;
+
+        public void Exit()
+        {
+            Anim.SetBool("active", false);
 
             CurrentAttackCounter++;
-            attackCounterResetTimer.StartTimer();
-            
+            attackCounterResetTimeNotifier.Init(attackCounterResetCooldown);
+
             OnExit?.Invoke();
         }
-        
+
         private void Awake()
         {
-            baseGameObject = transform.Find("Base").gameObject;
-            anim = baseGameObject.GetComponent<Animator>();
+            GetDependencies();
 
-            eventHandler = baseGameObject.GetComponent<AnimationEventHandler>();
+            attackCounterResetTimeNotifier = new TimeNotifier();
+        }
 
-            attackCounterResetTimer = new Timer(attackCounterResetCooldown);
+        private void GetDependencies()
+        {
+            if (initDone)
+                return;
+
+            BaseGameObject = transform.Find("Base").gameObject;
+            WeaponSpriteGameObject = transform.Find("WeaponSprite").gameObject;
+
+            Anim = BaseGameObject.GetComponent<Animator>();
+
+            EventHandler = BaseGameObject.GetComponent<AnimationEventHandler>();
+
+            initDone = true;
         }
 
         private void Update()
         {
-            attackCounterResetTimer.Tick();
+            attackCounterResetTimeNotifier.Tick();
         }
 
-        private void ResetAttackCounter() => CurrentAttackCounter = 0;
-        
+        private void ResetAttackCounter()
+        {
+            print("Reset Attack Counter");
+            CurrentAttackCounter = 0;
+        }
+
         private void OnEnable()
         {
-            eventHandler.OnFinish += Exit;
-            attackCounterResetTimer.OnTimerDone += ResetAttackCounter;
+            EventHandler.OnUseInput += HandleUseInput;
+            attackCounterResetTimeNotifier.OnNotify += ResetAttackCounter;
         }
 
         private void OnDisable()
         {
-            eventHandler.OnFinish -= Exit;
-            attackCounterResetTimer.OnTimerDone -= ResetAttackCounter;
-
+            EventHandler.OnUseInput -= HandleUseInput;
+            attackCounterResetTimeNotifier.OnNotify -= ResetAttackCounter;
         }
+
+        /// <summary>
+        /// Invokes event to pass along information from the AnimationEventHandler to a non-weapon class.
+        /// </summary>
+        private void HandleUseInput() => OnUseInput?.Invoke();
     }
 }

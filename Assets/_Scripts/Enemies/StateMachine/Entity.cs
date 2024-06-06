@@ -1,151 +1,110 @@
 using System.Collections;
 using System.Collections.Generic;
+using Whiskey.CoreSystem;
 using UnityEngine;
 
-public class Entity : MonoBehaviour,ISaveable
-{
-    protected Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
-    private Movement movement;
-    
-    protected Stats Stats { get => stats ?? Core.GetCoreComponent(ref stats); }
-    private Stats stats;
-    
-    public FiniteStateMachine stateMachine;
+public class Entity : MonoBehaviour {
+	private Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
 
-    public D_Entity entityData;
+	private Movement movement;
 
-    public Animator anim { get; private set; }    
-    public AnimationToStatemachine atsm { get; private set; }
-    public int lastDamageDirection { get; private set; }
-    public Core Core { get; private set; }
+	public FiniteStateMachine stateMachine;
 
-    [SerializeField]
-    private Transform wallCheck;
-    [SerializeField]
-    private Transform ledgeCheck;
-    [SerializeField]
-    private Transform playerCheck;
-    [SerializeField]
-    private Transform groundCheck;
+	public D_Entity entityData;
 
-    private float currentHealth;
-    private float currentStunResistance;
-    private float lastDamageTime;
+	public Animator anim { get; private set; }
+	public AnimationToStatemachine atsm { get; private set; }
+	public int lastDamageDirection { get; private set; }
+	public Core Core { get; private set; }
 
-    private Vector2 velocityWorkspace;
+	[SerializeField]
+	private Transform wallCheck;
+	[SerializeField]
+	private Transform ledgeCheck;
+	[SerializeField]
+	private Transform playerCheck;
+	[SerializeField]
+	private Transform groundCheck;
 
-    protected bool isStunned;
-    protected bool isDead;
+	private float currentHealth;
+	private float currentStunResistance;
+	private float lastDamageTime;
 
-    public virtual void Awake()
-    {
-        Core = GetComponentInChildren<Core>();
-        
-        currentHealth = entityData.maxHealth;
-        currentStunResistance = entityData.stunResistance;        
-        
-        anim = GetComponent<Animator>();
-        atsm = GetComponent<AnimationToStatemachine>();
+	private Vector2 velocityWorkspace;
 
-        stateMachine = new FiniteStateMachine();
-    }
+	protected bool isStunned;
+	protected bool isDead;
 
-    public virtual void Update()
-    {
-        Core.LogicUpdate();
-        stateMachine.currentState.LogicUpdate();
+	protected Stats stats;
+	protected ParryReceiver parryReceiver;
 
-        anim.SetFloat("yVelocity", Movement.RB.velocity.y);
+	public virtual void Awake() {
+		Core = GetComponentInChildren<Core>();
 
-        if(Time.time >= lastDamageTime + entityData.stunRecoveryTime)
-        {
-            ResetStunResistance();
-        }
-    }
+		stats = Core.GetCoreComponent<Stats>();
+		parryReceiver = Core.GetCoreComponent<ParryReceiver>();
 
-    public virtual void FixedUpdate()
-    {
-        stateMachine.currentState.PhysicsUpdate();
-    } 
+		parryReceiver.OnParried += HandleParry;
 
-    public virtual bool CheckPlayerInMinAgroRange()
-    {
-        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.minAgroDistance, entityData.whatIsPlayer);
-    }
+		currentHealth = entityData.maxHealth;
+		currentStunResistance = entityData.stunResistance;
 
-    public virtual bool CheckPlayerInMaxAgroRange()
-    {
-        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.maxAgroDistance, entityData.whatIsPlayer);
-    }
+		anim = GetComponent<Animator>();
+		atsm = GetComponent<AnimationToStatemachine>();
 
-    public virtual bool CheckPlayerInCloseRangeAction()
-    {
-        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
-    }
+		stateMachine = new FiniteStateMachine();
+	}
 
-    public virtual void DamageHop(float velocity)
-    {
-        velocityWorkspace.Set(Movement.RB.velocity.x, velocity);
-        Movement.RB.velocity = velocityWorkspace;
-    }
+	public virtual void Update() {
+		Core.LogicUpdate();
+		stateMachine.currentState.LogicUpdate();
 
-    public virtual void ResetStunResistance()
-    {
-        isStunned = false;
-        currentStunResistance = entityData.stunResistance;
-    }
+		anim.SetFloat("yVelocity", Movement.RB.velocity.y);
 
-    public virtual void OnDrawGizmos()
-    {
-        if(Core != null)
-        {
-            Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Movement.FacingDirection * entityData.wallCheckDistance));
-            Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3)(Vector2.down * entityData.ledgeCheckDistance));
+		if (Time.time >= lastDamageTime + entityData.stunRecoveryTime) {
+			ResetStunResistance();
+		}
+	}
 
-            Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
-            Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
-            Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
-       }
-    }
+	protected virtual void HandleParry()
+	{
+		
+	}
 
-    #region SaveFunction
+	public virtual void FixedUpdate() {
+		stateMachine.currentState.PhysicsUpdate();
+	}
 
-    public DataDefinition GetDataID()
-    {
-        return GetComponent<DataDefinition>();
-    }
+	public virtual bool CheckPlayerInMinAgroRange() {
+		return Physics2D.Raycast(playerCheck.position, transform.right, entityData.minAgroDistance, entityData.whatIsPlayer);
+	}
 
-    public void GetSaveData(Data data)
-    {
-        DataDefinition dataDefinition = GetDataID();
-        if (dataDefinition != null)
-        {
-            if (data.characterPosDict.ContainsKey(GetDataID().ID))
-            {
-                data.characterPosDict[GetDataID().ID] = transform.position;
-                data.floatSavedData[GetDataID().ID + "health"] = Stats.GetCurrentHealth();
-            }
-            else
-            {
-                data.characterPosDict.Add(GetDataID().ID, transform.position);
-                data.floatSavedData.Add(GetDataID().ID + "health", Stats.GetCurrentHealth());
-            }
-        }
-    }
+	public virtual bool CheckPlayerInMaxAgroRange() {
+		return Physics2D.Raycast(playerCheck.position, transform.right, entityData.maxAgroDistance, entityData.whatIsPlayer);
+	}
 
-    public void LoadData(Data data)
-    {
-        DataDefinition dataDefinition = GetDataID();
-        if (dataDefinition != null)
-        {
-            if (data.characterPosDict.ContainsKey(GetDataID().ID))
-            {
-                transform.position = data.characterPosDict[GetDataID().ID];
-                Stats.SetCurrentHealth(data.floatSavedData[GetDataID().ID + "health"]);
-            }
-        }
-    }
+	public virtual bool CheckPlayerInCloseRangeAction() {
+		return Physics2D.Raycast(playerCheck.position, transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
+	}
 
-    #endregion
+	public virtual void DamageHop(float velocity) {
+		velocityWorkspace.Set(Movement.RB.velocity.x, velocity);
+		Movement.RB.velocity = velocityWorkspace;
+	}
 
+	public virtual void ResetStunResistance() {
+		isStunned = false;
+		currentStunResistance = entityData.stunResistance;
+	}
+
+	public virtual void OnDrawGizmos() {
+		if (Core != null) {
+			Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Movement.FacingDirection * entityData.wallCheckDistance));
+			Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3)(Vector2.down * entityData.ledgeCheckDistance));
+
+			Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
+			Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
+			Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
+		}
+	}
 }

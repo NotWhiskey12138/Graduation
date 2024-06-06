@@ -3,13 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Whiskey.CoreSystem;
+using Whiskey.CoreSystem.StatsSystem;
 
 public class PlayerStatBar : MonoBehaviour
 {
     public Image healthImage;
     public Image healthDelayImage;
 
-    public Stats playerStats;
+    public Stat playerStats;
 
     private void Awake()
     {

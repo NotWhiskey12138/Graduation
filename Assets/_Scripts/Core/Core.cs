@@ -1,55 +1,61 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using Whiskey.CoreSystem;
+using UnityEngine;
 
-public class Core : MonoBehaviour
+namespace Whiskey.CoreSystem
 {
-    private readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
-
-    public void Awake()
+    public class Core : MonoBehaviour
     {
+        /*
+         * The GameObject representing the root of this entity. For most of my cases the Core sits on a child GO of the root GO so awake defaults to that. But
+         * you also have the option of manually assigning it
+         */
+        [field: SerializeField] public GameObject Root { get; private set; }
         
-    }
+        private readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
 
-    public void LogicUpdate()
-    {
-        foreach (CoreComponent component in CoreComponents)
+        private void Awake()
         {
-            component.LogicUpdate();
+            Root = Root ? Root : transform.parent.gameObject;
         }
-    }
 
-    public void AddComponent(CoreComponent component)
-    {
-        if (!CoreComponents.Contains(component))
+        public void LogicUpdate()
         {
-            CoreComponents.Add(component);
+            foreach (CoreComponent component in CoreComponents)
+            {
+                component.LogicUpdate();
+            }
         }
-    }
 
-    public T GetCoreComponent<T>() where T : Component
-    {
-        var comp = CoreComponents.OfType<T>().FirstOrDefault();
+        public void AddComponent(CoreComponent component)
+        {
+            if (!CoreComponents.Contains(component))
+            {
+                CoreComponents.Add(component);
+            }
+        }
 
-        if (comp)
-            return comp;
+        public T GetCoreComponent<T>() where T : CoreComponent
+        {
+            var comp = CoreComponents.OfType<T>().FirstOrDefault();
 
-        comp = GetComponentInChildren<T>();
-        
-        if (comp)
-            return comp;
-        
-        Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
+            if (comp)
+                return comp;
 
-        return null;
-        
+            comp = GetComponentInChildren<T>();
 
-    }
+            if (comp)
+                return comp;
 
-    public T GetCoreComponent<T>(ref T value) where T : CoreComponent
-    {
-        value = GetCoreComponent<T>();
-        return value;
+            Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
+            return null;
+        }
+
+        public T GetCoreComponent<T>(ref T value) where T : CoreComponent
+        {
+            value = GetCoreComponent<T>();
+            return value;
+        }
     }
 }

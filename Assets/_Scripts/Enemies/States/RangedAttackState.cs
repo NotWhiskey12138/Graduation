@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Whiskey.Projectiles;
 using UnityEngine;
 
 public class RangedAttackState : AttackState
