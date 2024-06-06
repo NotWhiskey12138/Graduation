@@ -37,6 +37,8 @@ public class Player : MonoBehaviour,ISaveable
 
     private Stats playerStats;
     
+    public PlayerStatBar playerStatBar { get; private set; }
+    
     #endregion
     
     #region Other Variables
@@ -46,6 +48,8 @@ public class Player : MonoBehaviour,ISaveable
     private bool interactiveInput; //使用输入检测
 
     private IInteractable targetItem; //当前获取的可交互物体
+
+    [SerializeField] private Stats stats; //角色当前状态
 
     #endregion
 
@@ -80,6 +84,7 @@ public class Player : MonoBehaviour,ISaveable
         RB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();
         Inventory = GetComponent<PlayerInventory>();
+        playerStatBar = GetComponentInChildren<PlayerStatBar>();
 
         PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.secondary]);
@@ -153,21 +158,35 @@ public class Player : MonoBehaviour,ISaveable
 
     public void GetSaveData(Data data)
     {
-        if (data.characterPosDict.ContainsKey(GetDataID().ID))
+        DataDefinition dataDefinition = GetDataID();
+        if (dataDefinition != null)
         {
-            data.characterPosDict[GetDataID().ID] = transform.position;
-        }
-        else
-        {
-            data.characterPosDict.Add(GetDataID().ID, transform.position);
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                data.characterPosDict[GetDataID().ID] = transform.position;
+                data.floatSavedData[GetDataID().ID + "health"] = stats.GetCurrentHealth();
+            }
+            else
+            {
+                data.characterPosDict.Add(GetDataID().ID, transform.position);
+                data.floatSavedData.Add(GetDataID().ID + "health", stats.GetCurrentHealth());
+            }
         }
     }
 
     public void LoadData(Data data)
     {
-        if (data.characterPosDict.ContainsKey(GetDataID().ID))
+        DataDefinition dataDefinition = GetDataID();
+        if (dataDefinition != null)
         {
-            transform.position = data.characterPosDict[GetDataID().ID];
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                transform.position = data.characterPosDict[GetDataID().ID];
+                stats.SetCurrentHealth(data.floatSavedData[GetDataID().ID + "health"]);
+
+                //通知UI更新
+                //playerStatBar.OnHealthChange(data.floatSavedData[GetDataID().ID + "health"]);
+            }
         }
     }
 

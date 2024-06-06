@@ -7,6 +7,9 @@ public class Entity : MonoBehaviour,ISaveable
     protected Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
     private Movement movement;
     
+    protected Stats Stats { get => stats ?? Core.GetCoreComponent(ref stats); }
+    private Stats stats;
+    
     public FiniteStateMachine stateMachine;
 
     public D_Entity entityData;
@@ -120,10 +123,12 @@ public class Entity : MonoBehaviour,ISaveable
             if (data.characterPosDict.ContainsKey(GetDataID().ID))
             {
                 data.characterPosDict[GetDataID().ID] = transform.position;
+                data.floatSavedData[GetDataID().ID + "health"] = Stats.GetCurrentHealth();
             }
             else
             {
                 data.characterPosDict.Add(GetDataID().ID, transform.position);
+                data.floatSavedData.Add(GetDataID().ID + "health", Stats.GetCurrentHealth());
             }
         }
     }
@@ -136,6 +141,7 @@ public class Entity : MonoBehaviour,ISaveable
             if (data.characterPosDict.ContainsKey(GetDataID().ID))
             {
                 transform.position = data.characterPosDict[GetDataID().ID];
+                Stats.SetCurrentHealth(data.floatSavedData[GetDataID().ID + "health"]);
             }
         }
     }

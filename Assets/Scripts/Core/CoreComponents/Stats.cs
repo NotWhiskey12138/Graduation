@@ -41,6 +41,11 @@ public class Stats : CoreComponent
         return currentHealth;
     }
 
+    public void SetCurrentHealth(float health)
+    {
+        currentHealth = health;
+    }
+    
     public float GetMaxHealth()
     {
         return maxHealth;

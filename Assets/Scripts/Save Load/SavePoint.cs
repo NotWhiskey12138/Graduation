@@ -6,6 +6,7 @@ using UnityEngine;
 public class SavePoint : MonoBehaviour, IInteractable
 {
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject enviormentLight;
 
     public bool isDone;
 
@@ -18,6 +19,7 @@ public class SavePoint : MonoBehaviour, IInteractable
     private void Update()
     {
         spriteRenderer.enabled = isDone;
+        enviormentLight.SetActive(isDone);
     }
 
 

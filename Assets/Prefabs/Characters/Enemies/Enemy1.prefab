@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 2188474784307885840}
   - component: {fileID: 4408694464378515338}
   - component: {fileID: 4408694464378515339}
+  - component: {fileID: 1212087625}
   m_Layer: 9
   m_Name: Enemy1
   m_TagString: Enemy
@@ -293,7 +294,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2013352227
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -450497991343149109, guid: 0ad1f08efda3e7b499d143cc4a1a6f2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -411,6 +412,20 @@ MonoBehaviour:
   stunStateData: {fileID: 11400000, guid: feb476734f45df242b04c3b50b211dc5, type: 2}
   deadStateData: {fileID: 11400000, guid: 803c5f6895b75114087f77743674c1bc, type: 2}
   meleeAttackPosition: {fileID: 2188474785239372934}
+--- !u!114 &1212087625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188474784307885854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899d6f7ba0a29ed4db7ce4f2155683f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentType: 0
+  ID: cf9a9f01-1d11-4771-b4ff-6e8fe5c11c21
 --- !u!1 &2188474784472037701
 GameObject:
   m_ObjectHideFlags: 0

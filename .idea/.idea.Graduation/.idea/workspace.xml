@@ -6,21 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="379cae35-698c-4fe5-9332-feb15058721e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Monster - Dungeon/Animation/AC Zombie.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Monster - Dungeon/Animation/AC Zombie.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Prefab/PF Village Props - Stone of Recall.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Prefab/PF Village Props - Stone of Recall.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Script/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Script/Chest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Colourful Hierarchy Category GameObject/Color Palette.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Colourful Hierarchy Category GameObject/Color Palette.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Player/Player_AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Player/Player_AC.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Item/Specially Item/Stone of Recall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Item/Specially Item/Stone of Recall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemySpecific/Enemy1/Enemy1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemySpecific/Enemy1/Enemy1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CoreComponents/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CoreComponents/Stats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/StateMachine/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/StateMachine/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item/Item.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerSgin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerSgin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save Load/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save Load/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save Load/SavePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save Load/SavePoint.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;GUI-and-Camera&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI__Camera__Save&amp;&amp;&amp;&amp;Load&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -119,7 +116,8 @@
       <workItem from="1716651923643" duration="612000" />
       <workItem from="1716709607996" duration="12000" />
       <workItem from="1716816327612" duration="3616000" />
-      <workItem from="1717038962258" duration="7082000" />
+      <workItem from="1717038962258" duration="10707000" />
+      <workItem from="1717581029037" duration="4858000" />
     </task>
     <servers />
   </component>
