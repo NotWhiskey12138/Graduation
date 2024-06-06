@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Whiskey.Weapons;
 
 public class Player : MonoBehaviour,ISaveable
 {
@@ -44,6 +45,9 @@ public class Player : MonoBehaviour,ISaveable
     
     private Vector2 workspace;
 
+    private Weapon primaryWeapon;
+    private Weapon secondaryWeapon;
+
     private bool interactiveInput; //使用输入检测
 
     private IInteractable targetItem; //当前获取的可交互物体
@@ -56,7 +60,9 @@ public class Player : MonoBehaviour,ISaveable
     private void Awake()
     {
         Core = GetComponentInChildren<Core>();
-        
+
+        primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
+        secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
         
         StateMachine = new PlayerStateMachine();
 
@@ -72,8 +78,8 @@ public class Player : MonoBehaviour,ISaveable
         LedgeClimbState = new PlayerLedgeClimbState(this, StateMachine, playerData, "ledgeClimbState");
         CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, playerData, "crouchIdle");
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "crouchMove");
-        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
-        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
+        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", primaryWeapon);
+        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", secondaryWeapon);
     }
 
     private void Start()
