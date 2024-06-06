@@ -6,50 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="379cae35-698c-4fe5-9332-feb15058721e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_CrouchIdle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_CrouchIdle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_CrouchMove.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_CrouchMove.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Fall.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Fall.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp1X.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp1X.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp2.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp2.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp2X.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp2X.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp3.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp3.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp3X.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_JumpUp3X.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Land.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Land.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeClimb.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeClimb.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeClimbCrouch.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeClimbCrouch.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeGrab.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeGrab.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeHold.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeHold.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Move.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Move.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_WallClimb.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_WallClimb.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_WallGrab.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_WallGrab.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_WallSlide.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_WallSlide.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerFinitStateMachine/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerFinitStateMachine/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapon.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerStates/SubState/PlayerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerStates/SubState/PlayerAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/UI/PlayerSgin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/UI/PlayerSgin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Weapons/Weapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
