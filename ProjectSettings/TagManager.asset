@@ -24,10 +24,10 @@ TagManager:
   - Dead
   - Player
   - Weapon
+  - Interactable
+  - WorldItem
+  - 
   - Bounds
-  - 
-  - 
-  - 
   - 
   - 
   - 

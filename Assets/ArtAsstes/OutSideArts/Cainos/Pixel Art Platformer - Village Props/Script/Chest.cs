@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cainos.LucidEditor;
 
-public class Chest : MonoBehaviour,IInteractable
+public class Chest : MonoBehaviour
 {
     [FoldoutGroup("Reference")]
     public Animator animator;
