@@ -8,13 +8,18 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject optionsPanel;
-    private bool isGamePaused = false;
+    public GameObject DeadMenu;
+
+    [SerializeField] private GameObject player;
+
+    [SerializeField] private DataManager datamanager;
     
+    private bool isGamePaused = false;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("jjjjjjj");
             if (isGamePaused)
             {
                 OnResumeGame();
@@ -48,5 +53,17 @@ public class PauseMenu : MonoBehaviour
     public void OnExitToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnRestart()
+    {
+        player.SetActive(true);
+        datamanager.Load();
+        DeadMenu.SetActive(false);
+    }
+
+    public void OpenDeadMenu()
+    {
+        DeadMenu.SetActive(true);
     }
 }

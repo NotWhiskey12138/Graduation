@@ -48,6 +48,8 @@ public class Player : MonoBehaviour,ISaveable
     public InteractableDetector InteractableDetector { get; private set; }
     
     [SerializeField] private PlayerStatBar statBar;
+    [SerializeField] private PauseMenu pauseMenu;
+    
     #endregion
 
     #region Other Variables         
@@ -113,12 +115,15 @@ public class Player : MonoBehaviour,ISaveable
     {
         ISaveable saveable = this;
         saveable.RegisterSaveData();
+        Stats.Health.OnCurrentValueZero += Dead;
     }
 
     private void OnDisable()
     {
         ISaveable saveable = this;
         saveable.UnRegisterSaveData();
+        Stats.Health.OnCurrentValueZero -= Dead;
+
     }
 
     private void HandlePoiseCurrentValueZero()
@@ -133,6 +138,7 @@ public class Player : MonoBehaviour,ISaveable
         
         statBar.OnHealthChange(Stats.Health.CurrentValue / Stats.Health.MaxValue);
 
+        
     }
 
     private void FixedUpdate()
@@ -163,8 +169,13 @@ public class Player : MonoBehaviour,ISaveable
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
-    
 
+
+    private void Dead()
+    {
+        pauseMenu.OpenDeadMenu();
+    }
+    
     #endregion
     
     #region SaveFunction
