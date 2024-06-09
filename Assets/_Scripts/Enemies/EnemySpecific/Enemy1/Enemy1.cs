@@ -62,7 +62,7 @@ public class Enemy1 : Entity
         
         stateMachine.ChangeState(stunState);
     }
-
+    
     private void Start()
     {
         stateMachine.Initialize(moveState);        

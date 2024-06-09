@@ -123,7 +123,6 @@ public class Player : MonoBehaviour,ISaveable
         ISaveable saveable = this;
         saveable.UnRegisterSaveData();
         Stats.Health.OnCurrentValueZero -= Dead;
-
     }
 
     private void HandlePoiseCurrentValueZero()
