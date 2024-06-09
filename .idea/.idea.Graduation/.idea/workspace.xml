@@ -6,18 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="379cae35-698c-4fe5-9332-feb15058721e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Combat/Bow_Base_Weapon_AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Combat/Bow_Base_Weapon_AC.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Combat/Sword_Base_Weapon_AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Combat/Sword_Base_Weapon_AC.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Player/Player_AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animation Controllers/Player/Player_AC.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemies/Enemy2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Item/Specially Item/Stone of Recall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Item/Specially Item/Stone of Recall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Land.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_Land.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Script/Chest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Script/Chest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Script/Editor/ChestEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Script/Editor/ChestEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Script/Chest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Village Props/Script/Chest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CoreComponents/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CoreComponents/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/StateMachine/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/StateMachine/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFinitStateMachine/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save Load/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save Load/Data.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save Load/SavePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save Load/SavePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/DamageReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Core/CoreComponents/DamageReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Interaction/IInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Interaction/IInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerFiniteStateMachine/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player/PlayerFiniteStateMachine/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ISaveable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save Load/DataDefinition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save Load/DataManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerSgin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Enums.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interaction/Interactables/Chest.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,7 +49,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;GUI__Camera__Save&amp;&amp;&amp;&amp;Load&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;tEST&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -118,6 +117,8 @@
       <workItem from="1716816327612" duration="3616000" />
       <workItem from="1717038962258" duration="10707000" />
       <workItem from="1717581029037" duration="4858000" />
+      <workItem from="1717905841250" duration="1189000" />
+      <workItem from="1717948036871" duration="2313000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,7 @@ using Whiskey.FSM;
 using Whiskey.Weapons;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Whiskey.Interaction;
 
 public class Player : MonoBehaviour
 {
@@ -145,7 +146,7 @@ public class Player : MonoBehaviour
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+    
 
-   
     #endregion
 }

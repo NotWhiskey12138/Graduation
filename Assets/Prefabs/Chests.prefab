@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3367191563591385412}
   - component: {fileID: 1477741571744199409}
-  - component: {fileID: 2101870298549802946}
   - component: {fileID: 3367191563591385414}
   m_Layer: 0
   m_Name: Chest Iron 1
@@ -55,19 +54,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2101870298549802946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3367191563591385413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564a40ab997e88549a733c999c980526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1477741571744199409}
 --- !u!61 &3367191563591385414
 BoxCollider2D:
   m_ObjectHideFlags: 0

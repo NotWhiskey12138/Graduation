@@ -8,6 +8,8 @@ namespace Whiskey.CoreSystem
     {
         [SerializeField] private GameObject damageParticles;
 
+        [SerializeField] private PlayerStatBar statBar;
+
         /*
          * Modifiers allows us to perform some custom logic on our DamageData before we apply it here. An example where this is being used is by the Block weapon component.
          * Blocking works by assigning a modifier during the active block window of the shield that reduces the amount of damage the player will take. For example: If a shield
@@ -35,6 +37,9 @@ namespace Whiskey.CoreSystem
 
             stats.Health.Decrease(data.Amount);
             particleManager.StartWithRandomRotation(damageParticles);
+
+            if(this.gameObject.CompareTag("Player"))
+                statBar.OnHealthChange(stats.Health.CurrentValue / stats.Health.MaxValue);
         }
 
         protected override void Awake()

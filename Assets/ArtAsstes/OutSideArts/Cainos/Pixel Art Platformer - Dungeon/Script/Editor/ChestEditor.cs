@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using Whiskey.Interaction;
 
 namespace Cainos.PixelArtPlatformer_Dungeon
 {
@@ -13,6 +14,8 @@ namespace Cainos.PixelArtPlatformer_Dungeon
         private Chest instance;
 
         private PropertyField IsOpened;
+
+        private IInteractable interactable;
 
         private void OnEnable()
         {
@@ -27,7 +30,7 @@ namespace Cainos.PixelArtPlatformer_Dungeon
             EditorGUILayout.Space();
             GUILayout.BeginHorizontal();
             GUILayout.Space(EditorGUI.indentLevel * 10);
-            if (GUILayout.Button("Open")) instance.Open();
+            if (GUILayout.Button("Open")) instance.Open(interactable);
             if (GUILayout.Button("Close")) instance.Close();
             GUILayout.EndHorizontal();
 
