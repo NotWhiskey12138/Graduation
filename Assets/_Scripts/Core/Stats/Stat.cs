@@ -31,5 +31,7 @@ namespace Whiskey.CoreSystem.StatsSystem
         public void Increase(float amount) => CurrentValue += amount;
 
         public void Decrease(float amount) => CurrentValue -= amount;
+
+        public void SetValue(float amount) => CurrentValue = amount;
     }
 }

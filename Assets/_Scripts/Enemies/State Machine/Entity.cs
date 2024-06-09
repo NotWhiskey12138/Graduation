@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Whiskey.CoreSystem;
 using UnityEngine;
 
-public class Entity : MonoBehaviour {
+public class Entity : MonoBehaviour,ISaveable
+{
 	private Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
 
 	private Movement movement;
@@ -66,6 +67,18 @@ public class Entity : MonoBehaviour {
 		}
 	}
 
+	private void OnEnable()
+	{
+		ISaveable saveable = this;
+		saveable.RegisterSaveData();
+	}
+
+	private void OnDisable()
+	{
+		ISaveable saveable = this;
+		saveable.UnRegisterSaveData();
+	}
+	
 	protected virtual void HandleParry()
 	{
 		
@@ -105,6 +118,42 @@ public class Entity : MonoBehaviour {
 			Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
 			Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
 			Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.maxAgroDistance), 0.2f);
+		}
+	}
+	
+	public DataDefinition GetDataID()
+	{
+		return GetComponent<DataDefinition>();
+	}
+
+	public void GetSaveData(Data data)
+	{
+		DataDefinition dataDefinition = GetDataID();
+		if (dataDefinition != null)
+		{
+			if (data.characterPosDict.ContainsKey(GetDataID().ID))
+			{
+				data.characterPosDict[GetDataID().ID] = transform.position;
+				data.floatSavedData[GetDataID().ID + "health"] = stats.Health.CurrentValue;
+			}
+			else
+			{
+				data.characterPosDict.Add(GetDataID().ID, transform.position);
+				data.floatSavedData.Add(GetDataID().ID + "health", stats.Health.CurrentValue);
+			}
+		}
+	}
+
+	public void LoadData(Data data)
+	{
+		DataDefinition dataDefinition = GetDataID();
+		if (dataDefinition != null)
+		{
+			if (data.characterPosDict.ContainsKey(GetDataID().ID))
+			{
+				transform.position = data.characterPosDict[GetDataID().ID];
+				stats.Health.SetValue(data.floatSavedData[GetDataID().ID + "health"]);
+			}
 		}
 	}
 }

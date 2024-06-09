@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using Whiskey.Interaction;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,ISaveable
 {
     #region State Variables
     public PlayerStateMachine StateMachine { get; private set; }
@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     public Stats Stats { get; private set; }
     
     public InteractableDetector InteractableDetector { get; private set; }
+    
+    [SerializeField] private PlayerStatBar statBar;
     #endregion
 
     #region Other Variables         
@@ -106,6 +108,18 @@ public class Player : MonoBehaviour
         
         StateMachine.Initialize(IdleState);
     }
+    
+    private void OnEnable()
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveData();
+    }
+
+    private void OnDisable()
+    {
+        ISaveable saveable = this;
+        saveable.UnRegisterSaveData();
+    }
 
     private void HandlePoiseCurrentValueZero()
     {
@@ -116,6 +130,9 @@ public class Player : MonoBehaviour
     {
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
+        
+        statBar.OnHealthChange(Stats.Health.CurrentValue / Stats.Health.MaxValue);
+
     }
 
     private void FixedUpdate()
@@ -147,6 +164,49 @@ public class Player : MonoBehaviour
 
     private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
     
+
+    #endregion
+    
+    #region SaveFunction
+
+    public DataDefinition GetDataID()
+    {
+        return GetComponent<DataDefinition>();
+    }
+
+    public void GetSaveData(Data data)
+    {
+        DataDefinition dataDefinition = GetDataID();
+        if (dataDefinition != null)
+        {
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                data.characterPosDict[GetDataID().ID] = transform.position;
+                data.floatSavedData[GetDataID().ID + "health"] = Stats.Health.CurrentValue;
+            }
+            else
+            {
+                data.characterPosDict.Add(GetDataID().ID, transform.position);
+                data.floatSavedData.Add(GetDataID().ID + "health", Stats.Health.CurrentValue);
+            }
+        }
+    }
+
+    public void LoadData(Data data)
+    {
+        DataDefinition dataDefinition = GetDataID();
+        if (dataDefinition != null)
+        {
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                transform.position = data.characterPosDict[GetDataID().ID];
+                Stats.Health.SetValue(data.floatSavedData[GetDataID().ID + "health"]);
+
+                //通知UI更新
+                //playerStatBar.OnHealthChange(data.floatSavedData[GetDataID().ID + "health"]);
+            }
+        }
+    }
 
     #endregion
 }

@@ -8,8 +8,6 @@ namespace Whiskey.CoreSystem
     {
         [SerializeField] private GameObject damageParticles;
 
-        [SerializeField] private PlayerStatBar statBar;
-
         private CameraControl cam;
 
         /*
@@ -39,10 +37,7 @@ namespace Whiskey.CoreSystem
 
             stats.Health.Decrease(data.Amount);
             particleManager.StartWithRandomRotation(damageParticles);
-
-            if(this.gameObject.CompareTag("Player"))
-                statBar.OnHealthChange(stats.Health.CurrentValue / stats.Health.MaxValue);
-
+            
             cam.OnCameraShake();
         }
 
