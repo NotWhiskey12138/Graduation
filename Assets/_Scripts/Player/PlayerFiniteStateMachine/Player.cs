@@ -107,6 +107,7 @@ public class Player : MonoBehaviour,ISaveable
         MovementCollider = GetComponent<BoxCollider2D>();
 
         Stats.Poise.OnCurrentValueZero += HandlePoiseCurrentValueZero;
+        Stats.Health.OnCurrentValueZero += Dead;
         
         StateMachine.Initialize(IdleState);
     }
@@ -115,14 +116,13 @@ public class Player : MonoBehaviour,ISaveable
     {
         ISaveable saveable = this;
         saveable.RegisterSaveData();
-        Stats.Health.OnCurrentValueZero += Dead;
+
     }
 
     private void OnDisable()
     {
         ISaveable saveable = this;
         saveable.UnRegisterSaveData();
-        Stats.Health.OnCurrentValueZero -= Dead;
     }
 
     private void HandlePoiseCurrentValueZero()
@@ -172,6 +172,7 @@ public class Player : MonoBehaviour,ISaveable
 
     private void Dead()
     {
+        Stats.Health.SetValueZero(true);
         pauseMenu.OpenDeadMenu();
     }
     
@@ -193,11 +194,13 @@ public class Player : MonoBehaviour,ISaveable
             {
                 data.characterPosDict[GetDataID().ID] = transform.position;
                 data.floatSavedData[GetDataID().ID + "health"] = Stats.Health.CurrentValue;
+                data.boolSaveData[GetDataID().ID + "Survive"] = Stats.Health.valueZero;
             }
             else
             {
                 data.characterPosDict.Add(GetDataID().ID, transform.position);
                 data.floatSavedData.Add(GetDataID().ID + "health", Stats.Health.CurrentValue);
+                data.boolSaveData.Add(GetDataID().ID + "Survive", Stats.Health.valueZero);
             }
         }
     }
@@ -211,6 +214,7 @@ public class Player : MonoBehaviour,ISaveable
             {
                 transform.position = data.characterPosDict[GetDataID().ID];
                 Stats.Health.SetValue(data.floatSavedData[GetDataID().ID + "health"]);
+                Stats.Health.SetValueZero(data.boolSaveData[GetDataID().ID + "Survive"]);
 
                 //通知UI更新
                 //playerStatBar.OnHealthChange(data.floatSavedData[GetDataID().ID + "health"]);
@@ -219,4 +223,12 @@ public class Player : MonoBehaviour,ISaveable
     }
 
     #endregion
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Abyss"))
+        {
+            Stats.Health.Decrease(10000000);
+        }
+    }
 }

@@ -51,6 +51,18 @@ public class Enemy1 : Entity
         stats.Poise.OnCurrentValueZero += HandlePoiseZero;
     }
 
+    private void OnEnable()
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveData();
+    }
+
+    private void OnDisable()
+    {
+        ISaveable saveable = this;
+        saveable.UnRegisterSaveData();
+    }
+    
     private void HandlePoiseZero()
     {
         stateMachine.ChangeState(stunState);
@@ -78,5 +90,17 @@ public class Enemy1 : Entity
         base.OnDrawGizmos();
 
         Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
+    }
+
+    public override void LoadData(Data data)
+    {
+        base.LoadData(data);
+
+        if (stats.Health.valueZero)
+        {
+            gameObject.SetActive(true);
+        }
+        
+        stateMachine.ChangeState(idleState);
     }
 }

@@ -368,7 +368,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8382320390051328761}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 36.51, y: -2.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -528,6 +528,7 @@ MonoBehaviour:
   ledgeCheck: {fileID: 8382320390085517364}
   playerCheck: {fileID: 8382320389619745613}
   groundCheck: {fileID: 8382320389683515644}
+  pauseMenu: {fileID: 0}
   moveStateData: {fileID: 11400000, guid: 943765f339413144794fd27a6894dfcc, type: 2}
   idleStateData: {fileID: 11400000, guid: 390268659f42098499c7b4c3e3c02e04, type: 2}
   playerDetectedStateData: {fileID: 11400000, guid: 81e40338c851d014c8c8f2cb5de623e9, type: 2}
@@ -552,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   persistentType: 0
-  ID: 37fabf56-af85-45a0-8877-57d39029ad98
+  ID: d7d564e7-3779-4719-ad67-5ecb37276d82
 --- !u!1 &8382320390085517365
 GameObject:
   m_ObjectHideFlags: 0

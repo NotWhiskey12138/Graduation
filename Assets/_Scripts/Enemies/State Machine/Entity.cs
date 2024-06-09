@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Whiskey.CoreSystem;
 using UnityEngine;
+using Whiskey.CoreSystem.StatsSystem;
 
 public class Entity : MonoBehaviour,ISaveable
 {
@@ -46,6 +47,7 @@ public class Entity : MonoBehaviour,ISaveable
 		parryReceiver = Core.GetCoreComponent<ParryReceiver>();
 
 		parryReceiver.OnParried += HandleParry;
+		stats.Health.OnCurrentValueZero += Dead;
 
 		currentHealth = entityData.maxHealth;
 		currentStunResistance = entityData.stunResistance;
@@ -54,8 +56,9 @@ public class Entity : MonoBehaviour,ISaveable
 		atsm = GetComponent<AnimationToStatemachine>();
 
 		stateMachine = new FiniteStateMachine();
+		
 	}
-
+	
 	public virtual void Update() {
 		Core.LogicUpdate();
 		stateMachine.currentState.LogicUpdate();
@@ -66,17 +69,10 @@ public class Entity : MonoBehaviour,ISaveable
 			ResetStunResistance();
 		}
 	}
-	
-	private void OnEnable()
-	{
-		ISaveable saveable = this;
-		saveable.RegisterSaveData();
-	}
 
-	private void OnDisable()
+	private void Dead()
 	{
-		ISaveable saveable = this;
-		saveable.UnRegisterSaveData();
+		stats.Health.SetValueZero(false);
 	}
 	
 	protected virtual void HandleParry()
@@ -126,7 +122,7 @@ public class Entity : MonoBehaviour,ISaveable
 		return GetComponent<DataDefinition>();
 	}
 
-	public void GetSaveData(Data data)
+	public virtual void GetSaveData(Data data)
 	{
 		DataDefinition dataDefinition = GetDataID();
 		if (dataDefinition != null)
@@ -135,16 +131,18 @@ public class Entity : MonoBehaviour,ISaveable
 			{
 				data.characterPosDict[GetDataID().ID] = transform.position;
 				data.floatSavedData[GetDataID().ID + "health"] = stats.Health.CurrentValue;
+				data.boolSaveData[GetDataID().ID + "Survive"] = stats.Health.valueZero;
 			}
 			else
 			{
 				data.characterPosDict.Add(GetDataID().ID, transform.position);
 				data.floatSavedData.Add(GetDataID().ID + "health", stats.Health.CurrentValue);
+				data.boolSaveData.Add(GetDataID().ID + "Survive", stats.Health.valueZero);
 			}
 		}
 	}
 
-	public void LoadData(Data data)
+	public virtual void LoadData(Data data)
 	{
 		DataDefinition dataDefinition = GetDataID();
 		if (dataDefinition != null)
@@ -153,7 +151,16 @@ public class Entity : MonoBehaviour,ISaveable
 			{
 				transform.position = data.characterPosDict[GetDataID().ID];
 				stats.Health.SetValue(data.floatSavedData[GetDataID().ID + "health"]);
+				stats.Health.SetValueZero(data.boolSaveData[GetDataID().ID + "Survive"]);
 			}
+		}
+	}
+	
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.CompareTag("Abyss"))
+		{
+			stats.Health.Decrease(10000000);
 		}
 	}
 }

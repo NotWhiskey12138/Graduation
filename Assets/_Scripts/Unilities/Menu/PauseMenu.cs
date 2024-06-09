@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Whiskey.CoreSystem;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject optionsPanel;
     public GameObject DeadMenu;
+
+    [SerializeField] private List<GameObject> deadEntities; //死去的敌人 
 
     [SerializeField] private GameObject player;
 
@@ -66,4 +69,5 @@ public class PauseMenu : MonoBehaviour
     {
         DeadMenu.SetActive(true);
     }
+    
 }

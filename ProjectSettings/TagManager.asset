@@ -11,6 +11,7 @@ TagManager:
   - Item
   - DataManager
   - Camera
+  - Abyss
   layers:
   - Default
   - TransparentFX

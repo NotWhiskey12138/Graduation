@@ -9,6 +9,7 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
 
     private List<ISaveable> saveableList = new List<ISaveable>();
+
     
     private Data saveData;
     
@@ -81,4 +82,7 @@ public class DataManager : MonoBehaviour
             saveable.LoadData(saveData);
         }
     }
+
+
+
 }

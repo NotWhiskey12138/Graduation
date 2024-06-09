@@ -7,6 +7,8 @@ namespace Whiskey.CoreSystem.StatsSystem
     public class Stat
     {
         public event Action OnCurrentValueZero;
+
+        public bool valueZero { get; private set; }
         
         [field: SerializeField] public float MaxValue { get; private set; }
 
@@ -19,7 +21,12 @@ namespace Whiskey.CoreSystem.StatsSystem
 
                 if (currentValue <= 0f)
                 {
+                    valueZero = true;
                     OnCurrentValueZero?.Invoke();
+                }
+                else
+                {
+                    valueZero = false;
                 }
             }
         }
@@ -33,5 +40,7 @@ namespace Whiskey.CoreSystem.StatsSystem
         public void Decrease(float amount) => CurrentValue -= amount;
 
         public void SetValue(float amount) => CurrentValue = amount;
+
+        public void SetValueZero(bool lessZero) => valueZero = lessZero;
     }
 }

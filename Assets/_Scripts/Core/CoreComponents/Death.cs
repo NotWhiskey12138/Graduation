@@ -22,8 +22,10 @@ namespace Whiskey.CoreSystem
             }
         
             core.transform.parent.gameObject.SetActive(false);
+            
+            
         }
-
+        
         private void OnEnable()
         {
             Stats.Health.OnCurrentValueZero += Die;
