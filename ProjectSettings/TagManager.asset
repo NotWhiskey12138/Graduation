@@ -10,6 +10,7 @@ TagManager:
   - Interactable
   - Item
   - DataManager
+  - Camera
   layers:
   - Default
   - TransparentFX

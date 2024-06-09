@@ -10,6 +10,8 @@ namespace Whiskey.CoreSystem
 
         [SerializeField] private PlayerStatBar statBar;
 
+        private CameraControl cam;
+
         /*
          * Modifiers allows us to perform some custom logic on our DamageData before we apply it here. An example where this is being used is by the Block weapon component.
          * Blocking works by assigning a modifier during the active block window of the shield that reduces the amount of damage the player will take. For example: If a shield
@@ -40,6 +42,8 @@ namespace Whiskey.CoreSystem
 
             if(this.gameObject.CompareTag("Player"))
                 statBar.OnHealthChange(stats.Health.CurrentValue / stats.Health.MaxValue);
+
+            cam.OnCameraShake();
         }
 
         protected override void Awake()
@@ -48,6 +52,7 @@ namespace Whiskey.CoreSystem
 
             stats = core.GetCoreComponent<Stats>();
             particleManager = core.GetCoreComponent<ParticleManager>();
+            cam = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraControl>();
         }
     }
 }
