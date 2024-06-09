@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2661590843214817276}
   - component: {fileID: 2661590843214817278}
   - component: {fileID: 2661590843214817279}
+  - component: {fileID: 2213652912659058138}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: Enemy
@@ -131,7 +132,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2661590843214817272}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.275, y: 8.069, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -201,8 +202,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -679396035
-  m_SortingLayer: 0
+  m_SortingLayerID: -2013352227
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -6949323471574244179, guid: ddf50f95aab6a44479230421f97f0242, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -302,6 +303,20 @@ MonoBehaviour:
   rangedAttackStateData: {fileID: 11400000, guid: 0ad3801fd63b05b45ad2876e57223e9b, type: 2}
   meleeAttackPosition: {fileID: 2661590843411707743}
   rangedAttackPosition: {fileID: 2661590843705944056}
+--- !u!114 &2213652912659058138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661590843214817272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899d6f7ba0a29ed4db7ce4f2155683f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentType: 0
+  ID: b3cfe66d-9fa6-49ae-b60e-178e9557bb90
 --- !u!1 &2661590843249014068
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageParticles: {fileID: 6240072112886026631, guid: d3ad3f1375e0d114ca19695641fceb61, type: 3}
+  statBar: {fileID: 0}
 --- !u!114 &2661590843310081279
 MonoBehaviour:
   m_ObjectHideFlags: 0
