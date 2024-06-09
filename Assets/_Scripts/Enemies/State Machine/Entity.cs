@@ -66,18 +66,6 @@ public class Entity : MonoBehaviour,ISaveable
 			ResetStunResistance();
 		}
 	}
-
-	private void OnEnable()
-	{
-		ISaveable saveable = this;
-		saveable.RegisterSaveData();
-	}
-
-	private void OnDisable()
-	{
-		ISaveable saveable = this;
-		saveable.UnRegisterSaveData();
-	}
 	
 	protected virtual void HandleParry()
 	{
