@@ -69,5 +69,10 @@ public class PauseMenu : MonoBehaviour
     {
         DeadMenu.SetActive(true);
     }
+
+    public void ToLevel2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
     
 }

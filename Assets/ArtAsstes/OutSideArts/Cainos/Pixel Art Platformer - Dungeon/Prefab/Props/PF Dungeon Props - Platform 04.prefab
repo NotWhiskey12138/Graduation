@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6265670936862214329}
   - component: {fileID: 8930051543745126958}
   - component: {fileID: 3671910660352168619}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: PF Dungeon Props - Platform 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8449652510481364354}
   - component: {fileID: 1183184457160673546}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Support R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5165277192047625971}
   - component: {fileID: 9185246011015455269}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Support L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,60 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a5a6cd738645369231540dd8f9631f, type: 3}
   m_Name: Tome_1
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: -766350882, guid: 7698f902a8e73cb4b88c4738f7fb0ff5,
-    type: 3}
+  <Icon>k__BackingField: {fileID: -766350882, guid: 7698f902a8e73cb4b88c4738f7fb0ff5, type: 3}
   <Name>k__BackingField: Magic Missile
   <Description>k__BackingField: A spell that shoots of magic missiles. These missles
     are able to track enemies. Each attack can be charged up to 3 times.
-  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 80caa8ced50a9af45801404d8bcc2e1c,
-    type: 2}
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 80caa8ced50a9af45801404d8bcc2e1c, type: 2}
   <NumberOfAttacks>k__BackingField: 1
   <ComponentData>k__BackingField:
-  - rid: 3076622070731767811
-  - rid: 3076622070731767812
-  - rid: 3076622070731767813
-  - rid: 3076622091185029120
-  - rid: 3076622091185029121
-  - rid: 3076622091185029123
-  - rid: 2299549901438320640
-  - rid: 2299549950738432000
-  - rid: 5881694658710208512
-  - rid: 5881694658710208513
-  - rid: 5881694658710208514
-  - rid: 5881694658710208515
+  - rid: 5881694759678378016
+  - rid: 5881694759678378015
+  - rid: 5881694759678378017
+  - rid: 5881694759678378018
+  - rid: 5881694759678378019
+  - rid: 5881694759678378020
+  - rid: 5881694759678378021
+  - rid: 5881694759678378022
+  - rid: 5881694759678378023
+  - rid: 5881694759678378024
+  - rid: 5881694759678378025
+  - rid: 5881694759678378026
   references:
     version: 2
     RefIds:
-    - rid: 2299549901438320640
-      type: {class: ChargeData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
-      data:
-        name: ChargeData
-        repeatData: 0
-        attackData:
-        - name: Attack 1
-          <ChargeTime>k__BackingField: 1
-          <InitialChargeAmount>k__BackingField: 1
-          <NumberOfCharges>k__BackingField: 3
-          <ChargeIncreaseIndicatorParticlePrefab>k__BackingField: {fileID: 6762676686280720063,
-            guid: 19758c9f67bb0264e8437296ed15d9ee, type: 3}
-          <FullyChargedIndicatorParticlePrefab>k__BackingField: {fileID: 6762676686280720063,
-            guid: 19758c9f67bb0264e8437296ed15d9ee, type: 3}
-          <ParticlesOffset>k__BackingField: {x: -0.6, y: 0.4}
-    - rid: 2299549950738432000
-      type: {class: ChargeToProjectileSpawnerData, ns: Bardent.Weapons.Components,
-        asm: Assembly-CSharp}
-      data:
-        name: ChargeToProjectileSpawnerData
-        repeatData: 0
-        attackData:
-        - name: Attack 1
-          <AngleVariation>k__BackingField: 15
-    - rid: 3076622070731767811
-      type: {class: InputHoldData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
-      data:
-        name: InputHoldData
-    - rid: 3076622070731767812
-      type: {class: WeaponSpriteData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378015
+      type: {class: WeaponSpriteData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: WeaponSpriteData
         repeatData: 0
@@ -108,8 +78,12 @@ MonoBehaviour:
             - {fileID: 1990419840, guid: 445ba39c27416744a8e405e06042ef7f, type: 3}
             - {fileID: -956591025, guid: 445ba39c27416744a8e405e06042ef7f, type: 3}
             - {fileID: -1999440277, guid: 445ba39c27416744a8e405e06042ef7f, type: 3}
-    - rid: 3076622070731767813
-      type: {class: MovementData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378016
+      type: {class: InputHoldData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
+      data:
+        name: InputHoldData
+    - rid: 5881694759678378017
+      type: {class: MovementData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: MovementData
         repeatData: 0
@@ -117,8 +91,8 @@ MonoBehaviour:
         - name: Attack 1
           <Direction>k__BackingField: {x: 1, y: 0}
           <Velocity>k__BackingField: 1
-    - rid: 3076622091185029120
-      type: {class: TargeterData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378018
+      type: {class: TargeterData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: TargeterData
         repeatData: 0
@@ -133,12 +107,12 @@ MonoBehaviour:
           <DamageableLayer>k__BackingField:
             serializedVersion: 2
             m_Bits: 512
-    - rid: 3076622091185029121
-      type: {class: TargeterToProjectileData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378019
+      type: {class: TargeterToProjectileData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: TargeterToProjectileData
-    - rid: 3076622091185029123
-      type: {class: ProjectileSpawnerData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378020
+      type: {class: ProjectileSpawnerData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: ProjectileSpawnerData
         repeatData: 0
@@ -147,8 +121,7 @@ MonoBehaviour:
           <SpawnInfos>k__BackingField:
           - <Offset>k__BackingField: {x: 0.81, y: 0.42}
             <Direction>k__BackingField: {x: 1, y: 0.25}
-            <ProjectilePrefab>k__BackingField: {fileID: 1775009464070235410, guid: baf2173d260384d4a8618e73167535db,
-              type: 3}
+            <ProjectilePrefab>k__BackingField: {fileID: 1775009464070235410, guid: baf2173d260384d4a8618e73167535db, type: 3}
             <DamageData>k__BackingField:
               <Amount>k__BackingField: 0
             <KnockBackData>k__BackingField:
@@ -157,18 +130,38 @@ MonoBehaviour:
             <PoiseDamageData>k__BackingField:
               <Amount>k__BackingField: 0
             <SpriteDataPackage>k__BackingField:
-              <Sprite>k__BackingField: {fileID: 1691212920, guid: cbcf3bd84a6c0724dbbb289ce667cbc3,
-                type: 3}
-    - rid: 5881694658710208512
-      type: {class: DamageOnParryData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+              <Sprite>k__BackingField: {fileID: 1691212920, guid: cbcf3bd84a6c0724dbbb289ce667cbc3, type: 3}
+    - rid: 5881694759678378021
+      type: {class: ChargeData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
+      data:
+        name: ChargeData
+        repeatData: 0
+        attackData:
+        - name: Attack 1
+          <ChargeTime>k__BackingField: 1
+          <InitialChargeAmount>k__BackingField: 1
+          <NumberOfCharges>k__BackingField: 3
+          <ChargeIncreaseIndicatorParticlePrefab>k__BackingField: {fileID: 6762676686280720063, guid: 19758c9f67bb0264e8437296ed15d9ee, type: 3}
+          <FullyChargedIndicatorParticlePrefab>k__BackingField: {fileID: 6762676686280720063, guid: 19758c9f67bb0264e8437296ed15d9ee, type: 3}
+          <ParticlesOffset>k__BackingField: {x: -0.6, y: 0.4}
+    - rid: 5881694759678378022
+      type: {class: ChargeToProjectileSpawnerData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
+      data:
+        name: ChargeToProjectileSpawnerData
+        repeatData: 0
+        attackData:
+        - name: Attack 1
+          <AngleVariation>k__BackingField: 15
+    - rid: 5881694759678378023
+      type: {class: DamageOnParryData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: DamageOnParryData
         repeatData: 0
         attackData:
         - name: Attack 1
           <Amount>k__BackingField: 0
-    - rid: 5881694658710208513
-      type: {class: DrawData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378024
+      type: {class: DrawData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: DrawData
         repeatData: 0
@@ -181,12 +174,12 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           <DrawTime>k__BackingField: 0
-    - rid: 5881694658710208514
-      type: {class: DrawToProjectileData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378025
+      type: {class: DrawToProjectileData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: DrawToProjectileData
-    - rid: 5881694658710208515
-      type: {class: KnockBackData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+    - rid: 5881694759678378026
+      type: {class: KnockBackData, ns: Whiskey.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: KnockBackData
         repeatData: 0

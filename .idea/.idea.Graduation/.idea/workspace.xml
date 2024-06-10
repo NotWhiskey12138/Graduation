@@ -6,20 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="379cae35-698c-4fe5-9332-feb15058721e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graduation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeClimb.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/Animation/Animations/PlayerMovement/Player_LedgeClimb.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Cage 01 B.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Cage 01 B.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Door Iron Side 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Door Iron Side 01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Door Wood Side 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Door Wood Side 01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Elevator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Elevator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Platform 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Platform 01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Cage 01 C.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Cage 01 C.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Caudron 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Caudron 01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Lamp 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Lamp 01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Platform 04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Platform 04.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Silver Candelabrum 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Silver Candelabrum 01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Wall Altar 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Wall Altar 01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Wall Cave 02 A.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Wall Cave 02 A.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Wall Cave 02 B.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Prefab/Props/PF Dungeon Props - Wall Cave 02 B.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Script/Elevator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ArtAsstes/OutSideArts/Cainos/Pixel Art Platformer - Dungeon/Script/Elevator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chests.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Bow_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/WeaponData/Bow_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Bow_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/WeaponData/Bow_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Bow_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/WeaponData/Bow_5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Shield_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/WeaponData/Shield_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Shield_3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Shield_3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Tome_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/WeaponData/Tome_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/WeaponData/Tome_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/WeaponData/Tome_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectiles/Arrow.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Interaction/Interactables/Chest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Player/DropDown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/SceneLoadEventSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UI/EnemyStatBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unilities/CameraControl.cs" root0="FORCE_HIGHLIGHTING" />
