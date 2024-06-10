@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6265670936862214329}
   - component: {fileID: 3466860307911347994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PF Dungeon Props - Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7310576011904726162}
   - component: {fileID: 8986972157257000190}
-  m_Layer: 0
+  - component: {fileID: 8787569362145771376}
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,8 +194,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 646815525
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -850489377, guid: daa359c07b4be2f47b477ca2857b031a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -207,6 +208,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8787569362145771376
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816664384247173716}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.20201683}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 1}
+    oldSize: {x: 1.9375, y: 0.3125}
+    newSize: {x: 0.15625, y: 1.6514099}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9375, y: 0.22096634}
+  m_EdgeRadius: 0
 --- !u!1 &4348025317723810476
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3713565632719602882}
   - component: {fileID: 164219850308663227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pulley R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,8 +304,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 646815525
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -454970740, guid: daa359c07b4be2f47b477ca2857b031a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -301,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6579581353529422234}
   - component: {fileID: 3469245742420006622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pulley L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,8 +388,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 646815525
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1231510439, guid: daa359c07b4be2f47b477ca2857b031a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -385,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125568242558347871}
   - component: {fileID: 28851127970173553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chain L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,8 +472,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 646815525
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1766440370, guid: daa359c07b4be2f47b477ca2857b031a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -469,7 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6451949121029859152}
   - component: {fileID: 4219355211932476857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chain R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,8 +556,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 646815525
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1766440370, guid: daa359c07b4be2f47b477ca2857b031a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
